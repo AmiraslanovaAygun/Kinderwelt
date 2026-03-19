@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<header class="placeholder-header home-header">
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      {% for swiper in swiper_images %}
+      <div class="swiper-slide" style="background-image: url('{{ swiper.image.url }}');">
+        <!-- <div class="slide-content">
+            <span>{{ swiper.title }}</span>
+          </div> -->
+      </div>
+      {% empty %} {% endfor %}
+    </div>
+  </div>
+</header>
+
+<section class="featured-section ">
+  <div class="background-svg"></div>
+
+  <div class="featured-container main-container">
+    <div class="section-header">
+      <p class="section-title">{{ home_products_title.title }}</p>
+      <h1 class="section-subtitle">
+        {{ home_products_title.description }}
+      </h1>
+    </div>
+
+    <div class="products-slider">
+      <div class="slider-container">
+        <!-- Product 1 -->
+        {% for product in home_products %}
+        <div class="product-card">
+          <div class="product-image">
+            <div>
+              <img loading="lazy" src="{{ product.image.url }}" alt="{{ product.title }}" />
+            </div>
+          </div>
+          <div class="product-info">
+            <h2 class="product-title">{{ product.title }}</h2>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="slider-nav prev-btn">
+        <i class="arrow arrow-left"></i>
+      </div>
+      <div class="slider-nav next-btn">
+        <i class="arrow arrow-right"></i>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="about" class="about-section">
+  <img src="{% static 'images/blobs.webp' %}" alt="Blobs Background" class="bg-image">
+  <div class="about-box container">
+    <h2 class="section-title">Über uns</h2>
+    <img class="bg-image" src="{% static 'icons/star.gif' %}" alt="Star icon" width="200">
+
+    {% for about in home_abouts %}
+    <div class="about-context">
+      <div>
+        <h2 class="section-subtitle">{{ about.title }}</h2>
+        <p class="section-description">
+          {{ about.description }}
+        </p>
+      </div>
+      <img src="{{ about.image.url }}" alt="{{ about.title }}">
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+
+<section id="sortiment" class="sortiment-section">
+  <img src="{% static 'images/blobs22.webp' %}" alt="Blobs Background" class="bg-image">
+  <div class=" container">
+    <h2 class="section-title">Unser Sortiment Entdecken</h2>
+    <div class="sortiment-box">
+      {% for sortiment in home_sortiments %}
+      <div class="sortiment-item">
+        <img src="{{ sortiment.image.url }}" alt="{{ sortiment.title }}">
+        <h3 class="sortiment-title">{{ sortiment.title }}</h3>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% if gallery_images %}
+<section id="galerie" class="gallery-section">
+    <h2 class="section-title">Galerie</h2>
+    <div class="swiper labSwiper">
+        <div class="swiper-wrapper">
+            {% for images in gallery_images %}
+            <div class="swiper-slide">
+                <img loading="lazy" src="{{ images.image.url }}" alt="{{ images.image_title }}" />
+            </div>
+            {% endfor %}
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</section>
+{% endif %}
+
+{% if home_contact %}
+<section id="contact" class="contact-section">
+    <img src="{% static 'images/blobs.webp' %}" alt="Blobs Background" class="bg-image">
+<div class="container">
+  <h2 class="section-title">Kontakt</h2>
+  <div class="contact-content">
+    <div class="contact-info">
+      <div class="address">
+        <p>Adresse</p>
+        <div class="info">
+          <i class="fa-solid fa-location-dot"></i>
+          <span class="section-description">{{ home_contact.address }}</span>
+        </div>
+      </div>
+      <div class="phone-number">
+        <p>Telefon</p>
+        <div class="">
+          <i class="fa-solid fa-phone"></i>
+          <span class="section-description">{{ home_contact.phone_number }}</span>
+        </div>
+      </div>
+      <div class="email">
+        <p>E-Mail</p>
+        <div class="info">
+          <i class="fa-solid fa-envelope"></i>
+          <span class="section-description">{{ home_contact.email }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="contact-image">
+      <img src="{{ home_contact.image.url }}" alt="Contact Image">
+    </div>
+  </div>
+
+  <div class="location">
+    <iframe src="{{ home_contact.map_url }}" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</div>
+</section>
+{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% load static %}
+
+<nav>
+  <div class="container">
+    <div class="navbar">
+
+      <div class="nav-section">
+        <a href="{% url 'home:home' %}" class="logo">
+          <img loading="lazy" src="{% static 'images/logo.png' %}" alt="Kinderwelt Logo" />
+        </a>
+
+        <div class="nav-list">
+          <ul>
+            <li><a href="{% url 'home:home' %}">Startseite</a></li>
+            <li><a href="#about">Über uns</a></li>
+            <li><a href="#sortiment">Sortiment</a></li>
+            <li><a href="#galerie">Galerie</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+          </ul>
+        </div>
+
+          <button class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+          </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-nav-content">
+    <ul class="mobile-nav-list">
+      <li class="mobile-nav-item"><a href="{% url 'home:home' %}">Startseite</a></li>
+      <li class="mobile-nav-item"><a href="#about">Über uns</a></li>
+      <li class="mobile-nav-item"><a href="#sortiment">Sortiment</a></li>
+      <li class="mobile-nav-item"><a href="#galerie">Galerie</a></li>
+      <li class="mobile-nav-item"><a href="#contact">Kontakt</a></li>
+    </ul>
+  </div>
+</div>

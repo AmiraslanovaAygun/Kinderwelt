@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% load static %} {% load i18n %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'assets/css/error.css' %}" />
+{% endblock %}
+
+{% block page_js %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="error-page">
+    <img loading="lazy" class="bg-image" src="{% static 'images/blobs.webp' %}" alt=" Error page image" />
+    <div class="error-content ">
+        <h2 class="title">503 - Service Unavailable</h2>
+        <p class="description">The server is temporarily unavailable. Please try again
+            later.
+        </p>
+    </div>
+</div>
+{% endblock %}

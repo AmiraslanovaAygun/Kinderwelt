@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 900;
+  src: url('/static/assets/fonts/fa-solid-900.woff2') format('woff2');
+  font-display: swap;
+}
+
+.fa,
+.fa-solid,
+.fas,
+.fa-brands {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-style: normal;
+  display: inline-block;
+  text-rendering: auto;
+  line-height: 1;
+}
+
+.fa-xmark::before {  content: '\f00d';}
+.fa-bars::before {  content: '\f0c9';}
+.fa-phone::before { content: "\f095"; }
+.fa-envelope::before { content: "\f0e0"; }
+.fa-location-dot::before { content: "\f3c5"; }
+.fa-facebook-f::before { content: "\f39e"; }
+.fa-pinterest-p::before { content: "\f231"; }
+.fa-instagram::before { content: "\f16d"; }
+.fa-whatsapp::before { content: "\f232"; }

@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Django
+*.log
+db.sqlite3
+db.sqlite3-journal
+local_settings.py
+*/migrations/*
+!*/migrations/__init__.py
+
+# Environments
+.env
+venv/
+.venv/
+env/
+
+# Media
+media/
+
+# Build / Packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# IDEs
+.idea/
+.vscode/
+.spyderproject
+.spyproject
+.ropeproject
+
+# Test / Coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Type Checkers
+.mypy_cache/
+.pyre/
+.pytype/
+
+# Other
+cython_debug/

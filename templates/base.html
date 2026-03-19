@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Kinderwelt</title>
+
+
+  <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+
+  {% block page_css %}{% endblock %}
+
+  <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+  {% include 'components/navbar.html' %}
+  {% block content %} {% endblock %}
+  {% include 'components/footer.html' %}
+
+  <script src="{% static 'assets/js/navbar.js' %}" defer></script>
+  <script src="{% static 'assets/js/script.js' %}" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+</body>
+
+</html>
