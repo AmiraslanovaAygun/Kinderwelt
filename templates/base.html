@@ -1,22 +1,82 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="de">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="{% static 'images/logo.webp' %}">
 
   <title>Kinderwelt</title>
+  <meta name="description"
+    content="Kinderwelt – Entdecke eine bunte Welt voller Spielzeug, Bücher, Schulmaterialien und weiterer kindgerechter Produkte. Sicher, nachhaltig und liebevoll ausgewählt, um die Fantasie, Kreativität und Entwicklung deines Kindes zu fördern.">
+  <meta name="keywords"
+    content="kinderwelt, spielzeug, bücher, schulmaterialien, kinder, pädagogisch, kreativ, sicher, nachhaltig">
+  <meta name="robots" content="index, follow">
 
+  <meta property="og:title" content="Kinderwelt">
+  <meta property="og:description"
+    content="Kinderwelt – Entdecke eine bunte Welt voller Spielzeug, Bücher, Schulmaterialien und weiterer kindgerechter Produkte. Sicher, nachhaltig und liebevoll ausgewählt, um die Fantasie, Kreativität und Entwicklung deines Kindes zu fördern.">
+  <meta property="og:image" content="https://kinderwelt.de/static/images/logo.webp">
+  <meta property="og:url" content="https://kinderwelt.de{{ request.path }}">
+  <meta property="og:type" content="website">
+  <link rel="alternate" hreflang="x-default" href="https://kinderwelt.de" />
 
-  <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}" />
   <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
-
-  {% block page_css %}{% endblock %}
-
-  <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Kinderwelt",
+    "image": "https://kinderwelt.de/static/images/logo.webp",
+    "url": "https://kinderwelt.de",
+    "telephone": "+493012345678",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Weismainer Straße 29, 96264 Altenkunstadt",
+      "addressLocality": "Altenkunstadt",
+      "addressRegion": "Bayern",
+      "postalCode": "96264",
+      "addressCountry": "DE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 50.1525,
+      "longitude": 11.2676
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
+    "sameAs": [
+      https://www.instagram.com/kinderwelt.shop?igsh=MWpoZWE4ejJ6ejA5YQ%3D%3D&utm_source=qr,
+      https://www.facebook.com/share/1DPTY7Xixj/?mibextid=wwXIfr
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+4995726097899",
+      "contactType": "customer service",
+      "availableLanguage": "German"
+    }
+  }
+</script>
+
 </head>
 
 <body>
